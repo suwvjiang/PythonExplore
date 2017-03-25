@@ -1,5 +1,3 @@
-#name = raw_input('please input your name')
-
 def power(x, n=2):
     s = 1
     while n>0:
