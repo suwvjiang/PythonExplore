@@ -1,16 +1,10 @@
 #name = raw_input('please input your name')
-
 def power(x, n=2):
     s = 1
     while n>0:
         n = n-1
         s *= x
     return s
-
-def Log(str):
-    total = power(4, 4)
-    print total
-    return
 
 def fact(i):
     return fact_itr(i, 1)
@@ -55,9 +49,20 @@ def not_prime(x):
                 return False
     return True
 
+def log(func):
+    def wrapper(*args, **kw):
+        print 'call %s():' % func.__name__
+        return func(*args, **kw)
+    return wrapper
+
+@log
+def now():
+    print '2017-3-24'
+
 #print ListCreate(10)
 #print Generate(10)
 #print fib(10)
 #print addFun(5,10, fact)
 #print map(f,ListCreate(10))
-print filter(not_prime, range(1, 100))
+#print filter(not_prime, range(1, 100))
+now()
